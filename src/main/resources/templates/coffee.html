@@ -6,8 +6,10 @@
 </head>
 <body>
 
-
-<!--/*@thymesVar id="coffee" type=""*/-->
+<tr th:each="coffee : ${coffeeDisplay}">
+    <td th:text="${coffee.id}"></td>
+    <td th:text="${coffee.coffeeName}">Title</td>
+</tr>
 
 </body>
 </html>
