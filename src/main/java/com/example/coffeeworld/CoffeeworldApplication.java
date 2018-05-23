@@ -28,6 +28,6 @@ public class CoffeeworldApplication implements CommandLineRunner {
         Coffee coffee2 = new Coffee("3", "kafa3");
 
         List<Coffee> coffees = Arrays.asList(coffee, coffee1, coffee2);
-        coffeeService.saveCoffee((Coffee) coffees);
+        coffeeService.saveCoffee(coffees);
     }
 }

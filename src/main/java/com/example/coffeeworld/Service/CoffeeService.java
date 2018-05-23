@@ -17,7 +17,7 @@ public class CoffeeService {
         return coffeeRepository.findAll();
     }
 
-    public void saveCoffee(Coffee coffees) {
-        coffeeRepository.save(coffees);
+    public void saveCoffee(List<Coffee> coffees) {
+        coffeeRepository.saveAll(coffees);
     }
 }

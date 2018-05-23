@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CoffeeRepository extends MongoRepository<Coffee, String> {
+
 }
