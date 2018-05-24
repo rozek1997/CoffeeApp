@@ -10,15 +10,17 @@ import java.util.List;
 
 @Component
 @Service
-public class CoffeeService {
+public class CoffeeService implements CoffeeServiceInterface {
 
     @Autowired
     private CoffeeRepository coffeeRepository;
 
+    @Override
     public List<Coffee> findAllCoffee() {
         return coffeeRepository.findAll();
     }
 
+    @Override
     public void saveCoffee(List<Coffee> coffees) {
         coffeeRepository.saveAll(coffees);
     }
