@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @Service
@@ -23,4 +24,12 @@ public class CoffeeService implements CoffeeServiceInterface {
         coffeeRepository.saveAll(coffees);
     }
 
+    public Optional<Coffee> findCoffeeById(String id) {
+        return coffeeRepository.findById(id);
+    }
+
+    @Override
+    public void deleteCoffeById(String id) {
+        coffeeRepository.deleteById(id);
+    }
 }
