@@ -7,11 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.DataBinder;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/coffee")
 public class CoffeeController {
 
@@ -19,9 +23,10 @@ public class CoffeeController {
     private CoffeeService coffeeService;
 
     @RequestMapping("/")
-    public String coffeeList(Model model) {
+    public List<Coffee> coffeeList(Model model) {
         List<Coffee> coffeeList = coffeeService.findAllCoffee();
-        model.addAttribute("coffeeDisplay", coffeeList);
-        return "coffee";
+        return coffeeList;
     }
+
+
 }

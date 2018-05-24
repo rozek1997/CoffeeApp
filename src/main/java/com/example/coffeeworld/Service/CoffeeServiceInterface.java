@@ -7,7 +7,9 @@ import java.util.List;
 public interface CoffeeServiceInterface {
 
 
-    List<Coffee> findAllCoffee();
+    public List<Coffee> findAllCoffee();
 
-    void saveCoffee(List<Coffee> coffees);
+    public void saveCoffees(List<Coffee> coffees);
+
+
 }

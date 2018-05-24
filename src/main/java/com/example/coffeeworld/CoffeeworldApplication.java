@@ -23,11 +23,12 @@ public class CoffeeworldApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         Coffee coffee = new Coffee("1", "kafa");
         Coffee coffee1 = new Coffee("2", "Kafa2");
         Coffee coffee2 = new Coffee("3", "kafa3");
 
         List<Coffee> coffees = Arrays.asList(coffee, coffee1, coffee2);
-        coffeeService.saveCoffee(coffees);
+        coffeeService.saveCoffees(coffees);
     }
 }

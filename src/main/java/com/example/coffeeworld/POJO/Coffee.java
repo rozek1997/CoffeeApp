@@ -4,12 +4,19 @@ package com.example.coffeeworld.POJO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 @Document(collection = "coffee")
 public class Coffee {
 
     @Id
+    @Min(value = 3)
     String id;
     String coffeeName;
+
+    public Coffee() {
+    }
 
     public Coffee(String id, String coffeeName) {
         this.id = id;
@@ -31,4 +38,6 @@ public class Coffee {
     public void setCoffeeName(String coffeeName) {
         this.coffeeName = coffeeName;
     }
+
+
 }
