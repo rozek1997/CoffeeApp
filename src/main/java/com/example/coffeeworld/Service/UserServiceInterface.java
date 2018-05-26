@@ -8,15 +8,25 @@ import java.util.Optional;
 
 public interface UserServiceInterface {
 
-    public Optional<Coffee> findCoffeeById(String id);
-
-    public void deleteCoffeById(String id);
 
     public Optional<User> findUserInformation(String id);
 
-    public void saveUsers(List<User> user);
-
     public User findUserByNick(String nickname);
 
-    public List<Coffee> myCoffees(String userID);
+    public void insertUser(User user);
+
+    public void updateUser(User user);
+
+    public void updateAllUser(List<User> userList);
+
+    public void insertAllUser(List<User> userList);
+
+    public List<Coffee> displayListOfCoffees(String userID);
+
+    public void updateCoffees(List<Coffee> coffees);
+
+    public void updateCoffee(Coffee coffee);
+
+    public void deleteCoffeById(String id);
+
 }

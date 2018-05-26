@@ -33,14 +33,16 @@ public class CoffeeworldApplication implements CommandLineRunner {
         Coffee coffee2 = new Coffee("3", "2", "kafa3");
 
         List<Coffee> coffees = Arrays.asList(coffee, coffee1, coffee2);
-        coffeeService.saveCoffees(coffees);
+        userService.updateCoffees(coffees);
 
         User user = new User("1", "Marek", "Roskowicz", "rozek1997", "marek@", "trol");
         User user1 = new User("2", "Adam", "Woznaikowski", "adas1234", "adam@", "trol");
         User user2 = new User("3", "Bartek", "Rzyszkiewicz", "batek1996", "bartek@", "trol");
 
         List<User> users = Arrays.asList(user, user1, user2);
-        userService.saveUsers(users);
+        userService.updateAllUser(users);
+        user1.setEmail("adas3456");
+        userService.updateUser(user1);
 
     }
 }

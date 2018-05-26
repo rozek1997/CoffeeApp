@@ -22,17 +22,8 @@ public class CoffeeService implements CoffeeServiceInterface {
     }
 
     @Override
-    public void saveCoffees(List<Coffee> coffees) {
-        coffeeRepository.saveAll(coffees);
+    public Coffee findCoffeeByCoffeeName(String coffeeName) {
+        return coffeeRepository.findCoffeeByCoffeeName(coffeeName);
     }
 
-    @Override
-    public Optional<Coffee> findCoffeeById(String id) {
-        return coffeeRepository.findById(id);
-    }
-
-    @Override
-    public void deleteCoffeById(String id) {
-        coffeeRepository.deleteById(id);
-    }
 }

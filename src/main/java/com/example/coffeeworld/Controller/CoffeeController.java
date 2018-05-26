@@ -21,20 +21,14 @@ public class CoffeeController {
     private CoffeeService coffeeService;
 
     @GetMapping("/")
-    public List<Coffee> coffeeList(Model model) {
+    public List<Coffee> coffeeList() {
         List<Coffee> coffeeList = coffeeService.findAllCoffee();
         return coffeeList;
     }
 
-    @GetMapping("/{id}")
-    public Optional<Coffee> coffee(@PathVariable String id) {
-        return coffeeService.findCoffeeById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void removeCoffee(@PathVariable String id, HttpServletResponse response) throws IOException {
-        coffeeService.deleteCoffeById(id);
-        response.sendRedirect("/coffee/");
+    @GetMapping("/{coffeeName}")
+    public Coffee findCoffeeByName(@PathVariable String coffeeName) {
+        return coffeeService.findCoffeeByCoffeeName(coffeeName);
     }
 
 

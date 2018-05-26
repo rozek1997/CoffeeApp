@@ -13,5 +13,7 @@ public interface CoffeeRepository extends MongoRepository<Coffee, String> {
 
     public List<Coffee> findAllByUserID(String userID);
 
+    public Coffee findCoffeeByCoffeeName(String coffeeName);
+
 
 }

@@ -20,24 +20,10 @@ public class UserService implements UserServiceInterface {
     @Autowired
     private UserRepository userRepository;
 
-    @Override
-    public Optional<Coffee> findCoffeeById(String id) {
-        return coffeeRepository.findById(id);
-    }
-
-    @Override
-    public void deleteCoffeById(String id) {
-        coffeeRepository.deleteById(id);
-    }
 
     @Override
     public Optional<User> findUserInformation(String id) {
         return userRepository.findById(id);
-    }
-
-    @Override
-    public void saveUsers(List<User> user) {
-        userRepository.saveAll(user);
     }
 
     @Override
@@ -46,8 +32,42 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public List<Coffee> myCoffees(String userID) {
+    public void insertUser(User user) {
+        userRepository.insert(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public void updateAllUser(List<User> userList) {
+        userRepository.saveAll(userList);
+    }
+
+    @Override
+    public void insertAllUser(List<User> userList) {
+        userRepository.insert(userList);
+    }
+
+    @Override
+    public List<Coffee> displayListOfCoffees(String userID) {
         return coffeeRepository.findAllByUserID(userID);
     }
 
+    @Override
+    public void updateCoffees(List<Coffee> coffees) {
+        coffeeRepository.saveAll(coffees);
+    }
+
+    @Override
+    public void updateCoffee(Coffee coffee) {
+        coffeeRepository.save(coffee);
+    }
+
+    @Override
+    public void deleteCoffeById(String id) {
+        coffeeRepository.deleteById(id);
+    }
 }
