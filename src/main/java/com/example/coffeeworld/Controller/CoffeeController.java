@@ -3,10 +3,13 @@ package com.example.coffeeworld.Controller;
 
 import com.example.coffeeworld.POJO.Coffee;
 import com.example.coffeeworld.Service.CoffeeService;
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,9 +31,10 @@ public class CoffeeController {
         return coffeeService.findCoffeeById(id);
     }
 
-    @DeleteMapping("/remove/{id}")
-    public void removeCoffee(@PathVariable String id) {
+    @DeleteMapping("/{id}")
+    public void removeCoffee(@PathVariable String id, HttpServletResponse response) throws IOException {
         coffeeService.deleteCoffeById(id);
+        response.sendRedirect("/coffee/");
     }
 
 
