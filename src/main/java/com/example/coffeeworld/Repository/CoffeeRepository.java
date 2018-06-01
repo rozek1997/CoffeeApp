@@ -5,15 +5,16 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
 public interface CoffeeRepository extends MongoRepository<Coffee, String> {
 
 
-    public List<Coffee> findAllByUserID(String userID);
+    public List<Coffee> findCoffeesByAccount_Username(String username);
 
-    public Coffee findCoffeeByCoffeeName(String coffeeName);
+    public Optional<Coffee> findCoffeeByCoffeeName(String coffeeName);
 
 
 }

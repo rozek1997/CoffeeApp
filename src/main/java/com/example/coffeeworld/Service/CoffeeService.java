@@ -22,7 +22,7 @@ public class CoffeeService implements CoffeeServiceInterface {
     }
 
     @Override
-    public Coffee findCoffeeByCoffeeName(String coffeeName) {
+    public Optional<Coffee> findCoffeeByCoffeeName(String coffeeName) {
         return coffeeRepository.findCoffeeByCoffeeName(coffeeName);
     }
 

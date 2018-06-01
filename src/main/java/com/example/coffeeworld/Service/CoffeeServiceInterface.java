@@ -10,7 +10,7 @@ public interface CoffeeServiceInterface {
 
     public List<Coffee> findAllCoffee();
 
-    public Coffee findCoffeeByCoffeeName(String coffeeName);
+    public Optional<Coffee> findCoffeeByCoffeeName(String coffeeName);
 
 
 }
