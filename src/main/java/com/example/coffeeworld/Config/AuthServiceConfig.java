@@ -1,5 +1,6 @@
 package com.example.coffeeworld.Config;
 
+import com.example.coffeeworld.Service.UserAuthorizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +15,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
 
     private final AuthenticationManager authenticationManager;
+    @Autowired
+    private UserAuthorizationService userAuthorizationService;
 
     @Autowired
     public AuthServiceConfig(AuthenticationManager authenticationManager) {
@@ -24,10 +27,12 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         //TODO: configure client with datebase
 
+
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.authenticationManager(authenticationManager);
+        endpoints.userDetailsService(userAuthorizationService);
     }
 }
