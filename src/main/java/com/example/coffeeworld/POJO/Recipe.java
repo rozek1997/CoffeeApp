@@ -11,6 +11,8 @@ public class Recipe {
     private String id;
     @JsonIgnore
     private Coffee coffee;
+    @JsonIgnore
+    private Account user;
     private Method method;
     private double coffeeWeight;
     private double waterAmount;
@@ -26,7 +28,7 @@ public class Recipe {
     }
 
     public Recipe(String id, Method method, double coffeeWeight, double waterAmount, int waterTemperature,
-                  String description, String grinding, double tds, Coffee coffee) {
+                  String description, String grinding, double tds, Coffee coffee, Account account) {
         this.id = id;
         this.method = method;
         this.coffeeWeight = coffeeWeight;
@@ -37,6 +39,7 @@ public class Recipe {
         this.tds = tds;
         this.roasteryName = coffee.getRoastery();
         this.origin = coffee.getOrigin();
+        this.user = account;
     }
 
     public String getId() {
@@ -125,5 +128,13 @@ public class Recipe {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public Account getUser() {
+        return user;
+    }
+
+    public void setUser(Account user) {
+        this.user = user;
     }
 }

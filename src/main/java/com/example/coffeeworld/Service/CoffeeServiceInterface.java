@@ -12,5 +12,7 @@ public interface CoffeeServiceInterface {
 
     public Optional<Coffee> findCoffeeByCoffeeName(String coffeeName);
 
+    public void addCoffee(Coffee coffee);
+
 
 }

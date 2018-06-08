@@ -26,4 +26,9 @@ public class CoffeeService implements CoffeeServiceInterface {
         return coffeeRepository.findCoffeeByCoffeeName(coffeeName);
     }
 
+    @Override
+    public void addCoffee(Coffee coffee){
+        coffeeRepository.save(coffee);
+    }
+
 }

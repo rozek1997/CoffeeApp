@@ -15,7 +15,7 @@ public class Coffee {
     @JsonIgnore
     private Account account;
     private String coffeeName;
-    private Date roastDate;
+    private String roastDate;
     private int metresAboveSeaLevel;
     private String roastery;
     private String process;
@@ -26,7 +26,7 @@ public class Coffee {
     public Coffee() {
     }
 
-    public Coffee(String ID, Account account, String coffeeName, Date roastDate, int metresAboveSeaLevel, String roastery,
+    public Coffee(String ID, Account account, String coffeeName, String roastDate, int metresAboveSeaLevel, String roastery,
                   String process, String origin, BeanType beanType) {
         this.ID = ID;
         this.account = account;
@@ -72,11 +72,11 @@ public class Coffee {
         this.username = username;
     }
 
-    public Date getRoastDate() {
+    public String getRoastDate() {
         return roastDate;
     }
 
-    public void setRoastDate(Date roastDate) {
+    public void setRoastDate(String roastDate) {
         this.roastDate = roastDate;
     }
 

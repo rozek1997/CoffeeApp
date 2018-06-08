@@ -4,10 +4,7 @@ package com.example.coffeeworld.Controller;
 import com.example.coffeeworld.POJO.Coffee;
 import com.example.coffeeworld.Service.CoffeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +25,11 @@ public class CoffeeController {
     @GetMapping("/{coffeeName}")
     public Optional<Coffee> findCoffeeByName(@PathVariable String coffeeName) {
         return coffeeService.findCoffeeByCoffeeName(coffeeName);
+    }
+
+    @RequestMapping(value = "/coffee", method = RequestMethod.POST)
+    public void addNewCoffee(Coffee coffee){
+        coffeeService.addCoffee(coffee);
     }
 
 
