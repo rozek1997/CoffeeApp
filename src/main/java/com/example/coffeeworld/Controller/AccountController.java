@@ -30,6 +30,11 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
+    /**
+     * Method used to get user's information
+     * @param username defines exact username
+     * @return Account details
+     */
     @GetMapping("/information")
     public Optional<Account> userInformation(@PathVariable String username) {
         //validateUser(username);
@@ -37,6 +42,11 @@ public class AccountController {
     }
 
 
+    /**
+     * Displays all coffees assigned to particular user
+     * @param username defines user
+     * @return list of coffees
+     */
     @GetMapping("/mycoffee")
     public List<Coffee> displayUserCoffees(@PathVariable String username) {
         //validateUser(username);
@@ -44,6 +54,13 @@ public class AccountController {
         return coffeeList;
     }
 
+    /**
+     * Removes coffee
+     * @param id coffee identifier
+     * @param username  username identifier(validation)
+     * @param response  object for response
+     * @throws IOException
+     */
     @DeleteMapping("/remove?q={id}")
     public void removeCoffeeByID(@PathVariable String id, @PathVariable String username, HttpServletResponse response) throws IOException {
         //validateUser(username);

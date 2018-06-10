@@ -18,6 +18,7 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private UserAuthorizationService userAuthorizationService;
 
+
     @Autowired
     public AuthServiceConfig(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;

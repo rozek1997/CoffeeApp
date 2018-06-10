@@ -18,6 +18,12 @@ public class UserAuthorizationService implements UserDetailsService {
     @Autowired
     private AccountService accountService;
 
+    /**
+     * loads user by its username
+     * @param username
+     * @return user
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Account> userAuthorization = accountService.findUserByUsername(username);

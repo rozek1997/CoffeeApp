@@ -18,17 +18,30 @@ public class CoffeeController {
     private CoffeeService coffeeService;
 
 
+    /**
+     * displays list of coffees
+     * @return  list of coffees
+     */
     @GetMapping("/")
     public List<Coffee> coffeeList() {
         List<Coffee> coffeeList = coffeeService.findAllCoffee();
         return coffeeList;
     }
 
+    /**
+     * displays particular coffee
+     * @param coffeeName name of coffee
+     * @return coffee instance
+     */
     @GetMapping("/{coffeeName}")
     public Optional<Coffee> findCoffeeByName(@PathVariable String coffeeName) {
         return coffeeService.findCoffeeByCoffeeName(coffeeName);
     }
 
+    /**
+     * adds new coffee
+     * @param coffee informations about coffee to be added
+     */
     @RequestMapping(value = "/coffee", method = RequestMethod.POST)
     public void addNewCoffee(Coffee coffee){
         coffeeService.addCoffee(coffee);

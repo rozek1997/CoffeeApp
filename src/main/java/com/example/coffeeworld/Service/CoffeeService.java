@@ -16,16 +16,29 @@ public class CoffeeService implements CoffeeServiceInterface {
     @Autowired
     private CoffeeRepository coffeeRepository;
 
+    /**
+     * returns list of all coffees
+     * @return list of coffees
+     */
     @Override
     public List<Coffee> findAllCoffee() {
         return coffeeRepository.findAll();
     }
 
+    /**
+     * returns coffees by name
+     * @param coffeeName
+     * @return list of coffees
+     */
     @Override
     public Optional<Coffee> findCoffeeByCoffeeName(String coffeeName) {
         return coffeeRepository.findCoffeeByCoffeeName(coffeeName);
     }
 
+    /**
+     * adds coffee
+     * @param coffee info
+     */
     @Override
     public void addCoffee(Coffee coffee){
         coffeeRepository.save(coffee);
