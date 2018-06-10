@@ -9,7 +9,6 @@ public class Recipe {
 
     @Id
     private String id;
-    @JsonIgnore
     private Coffee coffee;
     @JsonIgnore
     private Account user;

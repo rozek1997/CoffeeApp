@@ -42,7 +42,7 @@ public class RecipeController {
      * diplays all recipes
      * @return list of recipes
      */
-    @RequestMapping(value = "/recipes",method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Recipe> getAllRecipes(){
         return receipeService.getAllRecipes();
     }

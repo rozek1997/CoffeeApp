@@ -20,7 +20,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/coffee").permitAll()
-                .antMatchers("/user/**").permitAll(); //TODO://add authetication to user with authictaded
+                .antMatchers("/user/**").permitAll() //TODO://add authetication to user with authictaded
+                .antMatchers("/receipes/**").permitAll();
     }
 }
 
