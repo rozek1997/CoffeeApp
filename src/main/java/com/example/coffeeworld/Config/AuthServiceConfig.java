@@ -25,9 +25,7 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        //TODO: configure client with datebase
-
-
+        super.configure(clients);
     }
 
     @Override

@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/coffee")
 public class CoffeeController {
 
     @Autowired
     private CoffeeService coffeeService;
+
 
     @GetMapping("/")
     public List<Coffee> coffeeList() {

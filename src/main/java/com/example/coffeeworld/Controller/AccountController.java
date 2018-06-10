@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/user/{username}")
 public class AccountController {
@@ -29,29 +32,31 @@ public class AccountController {
 
     @GetMapping("/information")
     public Optional<Account> userInformation(@PathVariable String username) {
-        validateUser(username);
+        //validateUser(username);
         return accountService.findUserByUsername(username);
     }
 
 
     @GetMapping("/mycoffee")
     public List<Coffee> displayUserCoffees(@PathVariable String username) {
-        validateUser(username);
+        //validateUser(username);
         List<Coffee> coffeeList = accountService.displayListOfCoffees(username);
         return coffeeList;
     }
 
     @DeleteMapping("/remove?q={id}")
     public void removeCoffeeByID(@PathVariable String id, @PathVariable String username, HttpServletResponse response) throws IOException {
-        validateUser(username);
+        //validateUser(username);
         accountService.deleteCoffeById(id);
         response.sendRedirect("/coffee/");
     }
+
 
     private void validateUser(String username) throws UsernameNotFoundException {
         Optional<Account> account = this.accountService.findUserByUsername(username);
         if (account == null)
             throw new UsernameNotFoundException(username);
     }
+
 
 }
