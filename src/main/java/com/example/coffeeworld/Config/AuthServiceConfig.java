@@ -18,16 +18,31 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private UserAuthorizationService userAuthorizationService;
 
-
+    /**
+     * AutheticationManager bean
+     *
+     * @param authenticationManager
+     */
     @Autowired
     public AuthServiceConfig(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
+    /**
+     * Configuring web page which will be using our app
+     * @param clients
+     * @throws Exception
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         super.configure(clients);
     }
+
+    /**
+     * Configuring endpoints in our app
+     * @param endpoints
+     * @throws Exception
+     */
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {

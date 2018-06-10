@@ -6,7 +6,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
-
+/**
+ * Configuring Resource Authetication Server
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
@@ -16,6 +18,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         super.configure(resources);
     }
 
+    /**
+     * @param http Pages to we request authetication
+     * @throws Exception
+     */
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
