@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * account repository
+ */
 @Repository
 public interface AccountRepository extends MongoRepository<Account, String> {
 

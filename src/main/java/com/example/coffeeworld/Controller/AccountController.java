@@ -15,6 +15,9 @@ import java.util.Optional;
 
 //import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+/**
+ * controller used to handle requests about user
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/user/{username}")
@@ -23,10 +26,10 @@ public class AccountController {
     //TODO://ADD JAVADOC COMMENTS TO SE WHAT IS DONE
     //TODO://ADD user recipe to account controler
 
-    /**
-     * @param username use for idetify username
-     */
 
+    /**
+     * serviced used to connect with account repository
+     */
     @Autowired
     private AccountService accountService;
 
@@ -68,6 +71,10 @@ public class AccountController {
         response.sendRedirect("/coffee/");
     }
 
+
+    /**
+     * @param username use for idetify username
+     */
 
     private void validateUser(String username) throws UsernameNotFoundException {
         Optional<Account> account = this.accountService.findUserByUsername(username);

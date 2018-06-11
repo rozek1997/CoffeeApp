@@ -5,6 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+/**
+ * user details entity
+ */
 public class UserAuthorization implements UserDetails {
 
 

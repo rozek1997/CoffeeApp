@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 
+/**
+ * user details implementation
+ */
 @Service
 public class UserAuthorizationService implements UserDetailsService {
 

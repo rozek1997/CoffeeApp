@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * controller to display home page
+ */
 @CrossOrigin
 @Controller
 public class HomePageController {

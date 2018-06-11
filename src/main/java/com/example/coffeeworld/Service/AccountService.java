@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * account service implementation
+ */
 @Service
 @Component
 public class AccountService implements AccountServiceInterface {

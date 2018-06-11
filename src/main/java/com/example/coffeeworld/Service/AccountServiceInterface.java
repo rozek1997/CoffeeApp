@@ -6,6 +6,9 @@ import com.example.coffeeworld.POJO.Coffee;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * account service interface
+ */
 public interface AccountServiceInterface {
 
     public Optional<Account> findUserByUsername(String username);

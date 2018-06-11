@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * controller used to handle coffee requests
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/coffee")

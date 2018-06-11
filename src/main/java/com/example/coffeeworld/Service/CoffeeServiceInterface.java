@@ -5,6 +5,9 @@ import com.example.coffeeworld.POJO.Coffee;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * coffee service interface
+ */
 public interface CoffeeServiceInterface {
 
 

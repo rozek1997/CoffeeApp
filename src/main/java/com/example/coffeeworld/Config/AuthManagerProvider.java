@@ -6,6 +6,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
+/**
+ *
+ */
 @Configuration
 public class AuthManagerProvider extends WebSecurityConfigurerAdapter {
 

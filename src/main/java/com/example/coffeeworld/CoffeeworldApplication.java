@@ -37,13 +37,15 @@ public class CoffeeworldApplication implements CommandLineRunner {
         Coffee coffee = new Coffee("1",account, "Kafa1", "wczoraj",100,"Java","Natural","Kenia", BeanType.ARABICA);
         Coffee coffee1 = new Coffee("2",account, "Kafa2", "dzis",200,"CR","Washed","Columbia", BeanType.BLEND);
         Coffee coffee2 = new Coffee("3",account, "Kafa3", "jutro",300,"FH","Pulped Natural","San Salvador xD", BeanType.ROBUSTA);
+        Coffee coffee3 = new Coffee("4", account, "Kafa4", "pojutrze", 300, "FH", "Pulped Natural", "San Salvador xD", BeanType.ROBUSTA);
+
 
         Recipe recipe = new Recipe("1",Method.AEROPRESS, 18,300,92,"kwasowa","coarse",2.3,coffee,account);
         Recipe recipe1 = new Recipe("2",Method.CHEMEX, 30,500,94,"herbaciana","medium coarse",2.4,coffee1,account1);
         Recipe recipe2 = new Recipe("3",Method.V60, 15,250,87,"szybka kawka","fine",2.5,coffee2,account2);
 
 
-        List<Coffee> coffees = Arrays.asList(coffee, coffee1, coffee2);
+        List<Coffee> coffees = Arrays.asList(coffee, coffee1, coffee2, coffee3);
         coffeeService.addCoffee(coffee);
         coffeeService.addCoffee(coffee1);
         coffeeService.addCoffee(coffee2);
