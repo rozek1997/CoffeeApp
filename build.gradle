@@ -18,11 +18,16 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.example.coffeeworld'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
+jar {
+	baseName = 'coffee-app'
+	version =  '0.1.0'
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
@@ -31,7 +36,6 @@ dependencies {
 	compile('org.springframework.security:spring-security-web:5.0.5.RELEASE')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-webflux')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compile ('org.springframework.security.oauth:spring-security-oauth2:2.0.8.RELEASE')
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
